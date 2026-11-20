@@ -1,0 +1,570 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #172554,
+        #075985,
+        #312e81
+    );
+
+    background-size: 300% 300%;
+    animation: backgroundMove 12s ease infinite;
+
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Background Animation */
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   HEADING
+========================= */
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 0 3px 15px #38bdf8;
+}
+
+.subtitle {
+    text-align: center;
+    color: #bae6fd;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   BALANCE CARD
+========================= */
+
+.balance-card {
+    background: linear-gradient(
+        135deg,
+        #0284c7,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 20px;
+
+    box-shadow: 0 10px 30px #00000050;
+
+    border: 1px solid #ffffff50;
+
+    transition: 0.4s;
+}
+
+.balance-card:hover {
+    transform: translateY(-7px) scale(1.02);
+    box-shadow: 0 15px 35px #38bdf870;
+}
+
+.balance-card h1 {
+    color: white;
+    margin-top: 15px;
+    font-size: 35px;
+}
+
+/* =========================
+   INCOME AND EXPENSE
+========================= */
+
+.summary {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.box {
+    flex: 1;
+    padding: 25px;
+    text-align: center;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 20px #00000030;
+
+    transition: 0.4s;
+}
+
+.box:hover {
+    transform: translateY(-8px);
+}
+
+/* Income Card */
+
+.income-box {
+    background: linear-gradient(
+        135deg,
+        #dcfce7,
+        #86efac,
+        #bbf7d0
+    );
+
+    border: 2px solid #4ade80;
+}
+
+.income-box h2 {
+    color: #047857;
+    margin-top: 12px;
+}
+
+/* Expense Card */
+
+.expense-box {
+    background: linear-gradient(
+        135deg,
+        #ffe4e6,
+        #fda4af,
+        #fecdd3
+    );
+
+    border: 2px solid #fb7185;
+}
+
+.expense-box h2 {
+    color: #be123c;
+    margin-top: 12px;
+}
+
+/* =========================
+   FORM SECTION
+========================= */
+
+.form-section,
+.transaction-section {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #e0f2fe
+    );
+
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+
+    box-shadow: 0 8px 25px #00000040;
+
+    transition: 0.4s;
+}
+
+.form-section:hover,
+.transaction-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px #38bdf850;
+}
+
+.form-section h2,
+.transaction-section h2 {
+    margin-bottom: 20px;
+    color: #172554;
+}
+
+/* =========================
+   INPUT FIELDS
+========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+input,
+select {
+    padding: 13px;
+    border: 2px solid #bae6fd;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+
+    background: #ffffff;
+
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 12px #38bdf880;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    padding: 13px;
+
+    background: linear-gradient(
+        135deg,
+        #0284c7,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.03);
+    background: linear-gradient(
+        135deg,
+        #172554,
+        #312e81
+    );
+
+    box-shadow: 0 5px 15px #2563eb70;
+}
+
+/* =========================
+   TRANSACTION LIST
+========================= */
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    padding: 15px;
+    margin-bottom: 10px;
+
+    background: #ffffff;
+    border-radius: 10px;
+
+    border-left: 5px solid #38bdf8;
+
+    box-shadow: 0 3px 10px #00000010;
+
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.transaction-info {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+.income-text {
+    color: #059669;
+    font-weight: bold;
+}
+
+.expense-text {
+    color: #e11d48;
+    font-weight: bold;
+}
+
+/* Delete Button */
+
+.delete-btn {
+    background: linear-gradient(
+        135deg,
+        #ef4444,
+        #be123c
+    );
+
+    padding: 9px 13px;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background: #881337;
+}
+
+/* =========================
+   FLOWER SECTION
+========================= */
+
+.flower-section {
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #172554,
+        #075985,
+        #312e81
+    );
+
+    padding: 35px 15px;
+    border-radius: 20px;
+    margin-top: 30px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px #00000050;
+}
+
+.flower-section h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.flower-section p {
+    color: #bae6fd;
+}
+
+/* Flower */
+
+.flower {
+    position: relative;
+    width: 180px;
+    height: 250px;
+    margin: 20px auto 0;
+}
+
+.petals {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 5px;
+    left: 15px;
+    animation: flowerSway 4s ease-in-out infinite;
+}
+
+.petals span {
+    position: absolute;
+    width: 42px;
+    height: 75px;
+    left: 54px;
+    top: 0;
+
+    background: linear-gradient(
+        135deg,
+        #f9a8d4,
+        #ec4899,
+        #be185d
+    );
+
+    border-radius: 50% 50% 40% 40%;
+    transform-origin: 50% 75px;
+
+    animation: petalBloom 1.5s ease-out both;
+    box-shadow: 0 3px 10px #00000030;
+}
+
+.petals span:nth-child(1) { transform: rotate(0deg) scale(0); animation-delay: .1s; }
+.petals span:nth-child(2) { transform: rotate(45deg) scale(0); animation-delay: .2s; }
+.petals span:nth-child(3) { transform: rotate(90deg) scale(0); animation-delay: .3s; }
+.petals span:nth-child(4) { transform: rotate(135deg) scale(0); animation-delay: .4s; }
+.petals span:nth-child(5) { transform: rotate(180deg) scale(0); animation-delay: .5s; }
+.petals span:nth-child(6) { transform: rotate(225deg) scale(0); animation-delay: .6s; }
+.petals span:nth-child(7) { transform: rotate(270deg) scale(0); animation-delay: .7s; }
+.petals span:nth-child(8) { transform: rotate(315deg) scale(0); animation-delay: .8s; }
+
+@keyframes petalBloom {
+    from {
+        opacity: 0;
+        scale: 0;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* Flower Center */
+
+.flower-center {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+
+    background: radial-gradient(
+        circle,
+        #fff7a8,
+        #facc15,
+        #eab308
+    );
+
+    border-radius: 50%;
+    top: 65px;
+    left: 74px;
+    z-index: 5;
+
+    animation: centerGlow 2s infinite alternate;
+}
+
+/* Stem */
+
+.stem {
+    position: absolute;
+    width: 9px;
+    height: 0;
+
+    background: linear-gradient(
+        to right,
+        #15803d,
+        #4ade80
+    );
+
+    top: 125px;
+    left: 85px;
+    border-radius: 10px;
+
+    animation: growStem 2s ease-out .5s forwards;
+}
+
+@keyframes growStem {
+    to {
+        height: 115px;
+    }
+}
+
+/* Leaves */
+
+.leaf {
+    position: absolute;
+    width: 48px;
+    height: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #86efac,
+        #16a34a
+    );
+
+    opacity: 0;
+    border-radius: 100% 0 100% 0;
+}
+
+.leaf-left {
+    top: 180px;
+    left: 42px;
+    transform: rotate(20deg);
+    animation: leafAppear 1s ease 1.5s forwards;
+}
+
+.leaf-right {
+    top: 205px;
+    left: 91px;
+    transform: rotate(70deg);
+    animation: leafAppear 1s ease 2s forwards;
+}
+
+@keyframes leafAppear {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes flowerSway {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes centerGlow {
+    from {
+        box-shadow: 0 0 8px #facc15;
+    }
+    to {
+        box-shadow: 0 0 25px #facc15;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .summary {
+        flex-direction: column;
+    }
+
+    .balance-card {
+        padding: 22px;
+    }
+
+    .form-section,
+    .transaction-section {
+        padding: 18px;
+    }
+
+    .flower-section {
+        padding: 25px 10px;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
